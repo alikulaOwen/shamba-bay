@@ -1,4 +1,4 @@
-import bgImg from '../assets/Shamba-bg.png';
+import bgImg from '../../../../assets/Shamba-bg.png';
 import styled from 'styled-components';
 import SideBar from './sidebar';
 import MainSignUp from '../sign-in/main';

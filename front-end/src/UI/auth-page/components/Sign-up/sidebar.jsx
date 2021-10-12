@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import styled from 'styled-components';
-import logo from '../assets/Shamba-bay.png';
+import logo from '../../../../assets/Shamba-bay.png';
 import InputField from './input';
 
 

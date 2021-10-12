@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom';
 import './index.css';
 //import App from './App';
 import reportWebVitals from './reportWebVitals';
-import SignInScreen from './front-end/auth-page/components/sign-in/Sign-In';
+import SignInScreen from './UI/auth-page/components/sign-in/Sign-In';
 
 ReactDOM.render(
   <React.StrictMode>
