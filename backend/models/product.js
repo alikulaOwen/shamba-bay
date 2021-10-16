@@ -39,18 +39,7 @@ const productSchema = new mongoose.Schema({
     ],
     category: {
         type: String,
-        required: [true, 'Please select category'],
-        enum: {
-            values: [
-                'Vegetables', 
-                'Meat',
-                'By-products',
-                'Animal',
-                'fertilizers'
-
-            ],
-            message: 'please select a category.'
-        }
+        required: [true, 'Please select category']
     },
     seller: {
         type: String,
@@ -87,19 +76,7 @@ timeCreated: {
 }, 
 status: {
     type: String,
-    required: true,
-    enum: 
-    {
-        values: [
-            'Perishable',
-            'storable',
-        ]
-    },
-    location: {
-        type: Location,
-        required: false
-        
-    }
+    required: true
 }
 });
 
