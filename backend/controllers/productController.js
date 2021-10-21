@@ -4,6 +4,10 @@ const ErrorHandler = require('../utils/errorHandlers')
 
 const AsyncErrors = require('../middlewares/asyncErrors')
 
+const APIsFeature = require('../utils/api')
+
+
+
 exports.newProduct =async (req, res, next)=>{
     const product = await Product.create(req.body);
 
@@ -16,12 +20,20 @@ exports.newProduct =async (req, res, next)=>{
 }
 //Get all products from database
 exports.getProduct = AsyncErrors( async(req, res, next) => {
-
-    const products = await Product.find()
+    
+    const resPerPage = 4 ; 
+    const productCount = await Product.countDocuments();
+    
+    const searchAPI = new APIsFeature(products.find(), req.query)
+        .search()
+        .filter()
+        .pagination(resPerPage);
+    const products = await searchAPI.query
     res.status(200).json(
         {
             success: true,
             count: products.length,
+            productCount, 
             products  }
     )
 });
@@ -32,7 +44,7 @@ exports.getProduct = AsyncErrors( async(req, res, next) => {
     const products = await Product.findById()
 
     if(!products){
-        return next( new ErrorHandler('Product Not Found', 404))
+        return next(new ErrorHandler('Product Not Found', 404))
     }
     res.status(203).json({
         success: true,
