@@ -1,5 +1,5 @@
-const Product = require('../models/product');
 
+<<<<<<< HEAD
 const ErrorHandler = require('../utils/errorHandlers')
 
 const AsyncErrors = require('../middlewares/asyncErrors')
@@ -96,3 +96,14 @@ exports.deleteProduct = AsyncErrors(async(req,res,next) => {
     await product.remove();
 
 });
+=======
+
+exports.getProduct = (req, res, next) => {
+    res.status(200).json(
+        {
+            success: true,
+            message: "This route will show all products in the database"
+        }
+    )
+}
+>>>>>>> parent of 50bf7e1... added CRUD to product module.
