@@ -1,7 +1,7 @@
 
 class APIsFeatures{
     constructor(query, queryString){
-        this.query = queryString;
+        this.query = query;
         this.queryString = queryString;
 
     }
