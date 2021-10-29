@@ -27,6 +27,21 @@ module.exports = (err, req, res, next)=> {
             error = new ErrorHandler(message, 400);
         }
 
+        // handling duplicate keys error 11000
+
+        if (err.code === 11000){
+            const message = `Duplicate ${Object.keys(err.keyValue)} entered`;
+            error = new ErrorHandler(message, 400);
+        } 
+     ///mongoose validation error
+        if(err.name == 'JsonWebTokenError'){
+            const message = 'JWT is invalid, try again';
+            error = new ErrorHandler(message, 400);
+        }
+        if(err.name == 'TokenExpiredError'){
+                const message = 'JWT is expired,';
+                error = new ErrorHandler(message, 400);
+        }
         error.message = err.message;
         res.status(error.statusCode).json({
             success: false,
