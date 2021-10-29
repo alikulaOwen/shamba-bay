@@ -8,7 +8,8 @@ const {
     updateProduct, 
     newProduct, 
     newUserProductReview, 
-    getAllProductReviews
+    getAllProductReviews,
+    deleteProductReviews
 } = require('../controllers/productController');
 
 
@@ -31,6 +32,8 @@ router.route('/admin/products/:id')
     //route for creating user reviews
 router.route('/reviews').put(isAuthenticatedUser, newUserProductReview)
 router.route('/reviews').get(isAuthenticatedUser, getAllProductReviews)
+router.route('/reviews').delete(isAuthenticatedUser, deleteProductReviews)
+
 
 
 
