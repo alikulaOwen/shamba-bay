@@ -1,5 +1,4 @@
 const Order = require("../models/order");
-const product = require('../models/product');
 
 
 const ErrorHandler = require('../utils/errorHandlers');

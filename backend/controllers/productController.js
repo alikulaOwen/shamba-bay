@@ -3,7 +3,7 @@ const Product  = require('../models/product')
 
 const ErrorHandler = require('../utils/errorHandlers')
 
-const AsyncErrors = require('../middlewares/asyncErrors')
+const catchAsyncError = require('../middlewares/asyncErrors')
 
 const APIsFeature = require('../utils/api')
 
@@ -25,7 +25,7 @@ exports.newProduct =async (req, res, next)=>{
     )
 }
 //Get all products from database
-exports.getProduct = AsyncErrors( async(req, res, next) => {
+exports.getProduct = catchAsyncError( async(req, res, next) => {
     
     const resPerPage = 4 ; 
     const productCount = await Product.countDocuments();
@@ -45,7 +45,7 @@ exports.getProduct = AsyncErrors( async(req, res, next) => {
 });
 
 //getting a single object or product from data base.
- exports.getSingleProduct = AsyncErrors(async (req, res, next)=>
+ exports.getSingleProduct = catchAsyncError(async (req, res, next)=>
 {
     const products = await Product.findById(req.params.id)
 
@@ -60,7 +60,7 @@ exports.getProduct = AsyncErrors( async(req, res, next) => {
 })
 //Update product =>
 
-exports.updateProduct = AsyncErrors(async (req, res, next) =>{
+exports.updateProduct = catchAsyncError(async (req, res, next) =>{
     let product = await Product.findById()
 
     if(!product){
@@ -71,6 +71,7 @@ exports.updateProduct = AsyncErrors(async (req, res, next) =>{
             }
         
         )
+
     }
 
     product = await Product.findByIdAndUpdate(req.params.id, req.body, {
@@ -86,7 +87,7 @@ exports.updateProduct = AsyncErrors(async (req, res, next) =>{
 });
 //Delete product
 
-exports.deleteProduct = AsyncErrors(async(req,res,next) => {
+exports.deleteProduct = catchAsyncError(async(req,res,next) => {
     const product = Product.findById(req.params.id);
 
     if(!product){

@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 
-const orderSchema = mongoose.schema({
+const orderSchema = mongoose.Schema({
     shippingInfo: {
         address: {
             type: String,
@@ -33,10 +33,11 @@ const orderSchema = mongoose.schema({
         continent: {
             type: String,
             required: true
+
         },
     },
     user: {
-        type: mongoose.schema.Types.ObjectId,
+        type: mongoose.Schema.Types.ObjectId,
         required: true,
         ref: 'User'
     },
@@ -59,7 +60,7 @@ const orderSchema = mongoose.schema({
                 required: true
             },
             product: {
-                type: mongoose.schema.Types.ObjectId,
+                type: mongoose.Schema.Types.ObjectId,
                 required: true,
                 ref: 'Product'
             }
