@@ -40,17 +40,17 @@ const productSchema = new mongoose.Schema({
     category: {
         type: String,
         required: [true, 'Please select category'],
-        // enum: {
-        //     values: [
-        //         'Vegetables', 
-        //         'Meat',
-        //         'By-products',
-        //         'Animal',
-        //         'fertilizers'
+        enum: {
+            values: [
+                'Vegetables', 
+                'Meat',
+                'By-products',
+                'Animal',
+                'fertilizers'
 
-        //     ],
-        //     message: 'please select a category.'
-        // }
+            ],
+            message: 'please select a category.'
+        }
     },
 
     seller: {
@@ -71,7 +71,7 @@ const productSchema = new mongoose.Schema({
         user:{
                 type: mongoose.Schema.ObjectId,
                 ref: 'User',
-                required: true
+                required: false
             }, 
         ratings: {
             type: String,
@@ -95,18 +95,19 @@ timeCreated: {
 status: {
     type: String,
     required: true,
-    // enum: 
-    // {
-    //     values: [
-    //         'Perishable',
-    //         'storable',
-    //     ]
-    // },
-    // location: {
-    //     type: String,
-    //     required: false
-        
-    // }
+    enum: 
+    {
+        values: [
+            'Perishable',
+            'storable',
+        ]
+    },
+   
+},
+location: {
+    type: String,
+    required: false
+    
 }
 });
 
