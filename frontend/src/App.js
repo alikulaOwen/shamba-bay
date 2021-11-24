@@ -1,9 +1,11 @@
-import logo from './logo.svg';
+
 import './App.css';
+import MainApp from './shamba/mainApp';
 
 function App() {
   return (
     <div className="App">
+      <MainApp/>
     </div>
   );
 }

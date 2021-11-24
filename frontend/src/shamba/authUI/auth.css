@@ -1,0 +1,51 @@
+.login__welcome-container {
+  transition: visibility 0.3s ease-in-out;
+  transition: all 0.8s ease-in-out;
+}
+.login__welcome-container--active {
+  visibility: visible;
+  transform: translateX(0%);
+}
+.login__welcome-container--inactive {
+  visibility: hidden;
+  transform: translateX(-100%);
+}
+.login-create-container {
+  transition: all 0.8 ease-in-out;
+}
+.login-create-container--active {
+  visibility: visible;
+  transform: translateX(0%);
+}
+.login-create-container--inactive {
+  visibility: hidden;
+  transform: translateX(100%);
+}
+.login-login-container {
+  transition: all 0.7s ease-in-out;
+}
+.login-login-container--active {
+  visibility: visible;
+  transform: translateX(0%);
+  opacity: 1;
+  width: 70%;
+}
+.login-login-container--inactive {
+  visibility: hidden;
+  translate: translate(100%);
+  opacity: 0;
+  width: 0;
+}
+
+.create-container {
+  transition: all 0.8 ease-in-out;
+}
+
+.create-container--active {
+  visibility: visible;
+  transform: translateX(0%);
+}
+.create-container--inactive {
+  visibility: hidden;
+  transform: translateX(-100%);
+}
