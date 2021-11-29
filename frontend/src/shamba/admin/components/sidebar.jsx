@@ -1,13 +1,18 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
-import React from 'react'
-import logo from '../../../assets/Shamba Bay.png';
-import {ViewBoardsIcon} from '@heroicons/react/outline';
+import React from "react";
+import logo from "../../../assets/Shamba Bay.png";
+import { ViewBoardsIcon } from "@heroicons/react/outline";
+
+const user = 
+   {
+    userName: "Owen Alikula",
+    userId: "vuis88rg8t48d",
+  }
+;
 
 export default function SidebarAdminComponent() {
-    return (
-        <div className="flex w-1/4 h-screen bg-green-200 ">
-            
-
+  return (
+    <div className="flex w-1/4 h-screen bg-green-200 ">
       <div className="flex bg-green-100 w-full h-full text-gray-900 border justify-center items-center border-green-200">
         <div className="flex mt-8">
           <div className="w-1/2">
@@ -18,8 +23,8 @@ export default function SidebarAdminComponent() {
             />
           </div>
           <div className="w-1/2 mt-10 flex flex-col">
-            <span className="font-semibold text-base">Owen Holder</span>
-            <span className="mt-3 text-xs">User ID: </span>
+            <span className="font-semibold text-base">{user.userName}</span>
+            <span className="mt-3 text-xs">{user.userId} </span>
           </div>
         </div>
         <div className="mt-10 mb-4">
@@ -53,7 +58,6 @@ export default function SidebarAdminComponent() {
                 </svg>
               </span>
               <a href="#">
-               
                 <span className="ml-2">Users</span>
               </a>
             </li>
@@ -68,7 +72,6 @@ export default function SidebarAdminComponent() {
                 </svg>
               </span>
               <a href="#">
-               
                 <span className="ml-2">Products</span>
               </a>
             </li>
@@ -130,5 +133,5 @@ export default function SidebarAdminComponent() {
         </div>
       </div>
     </div>
-    )
+  );
 }
