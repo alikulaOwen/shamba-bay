@@ -5,7 +5,7 @@ import { ALL_PRODUCT_FAILURE,
 } 
 from "../constants/allProductConst";
 
-export const allProductReducer = (state = {proucts: []},action)=>{
+export const allProductReducer = (state = {products: []},action)=>{
     switch(action.type){
         case ALL_PRODUCT_REQUEST:
             return{

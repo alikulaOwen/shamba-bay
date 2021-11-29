@@ -1,88 +1,17 @@
-import React, { Fragment } from 'react'
+import React, { Fragment, useEffect } from 'react'
 //import Product from '../../../components/product';
+import { useDispatch, useSelector } from 'react-redux';
 
-
-const products = [
-    {
-      id: 1,
-      name: 'Basic Tee',
-      href: '#',
-      imageSrc: 'https://tailwindui.com/img/ecommerce-images/product-page-01-related-product-01.jpg',
-      imageAlt: "Front of men's Basic Tee in black.",
-      price: 'kes 432',
-      color: 'Black',
-    },
-    {
-      id: 1,
-      name: 'Basic Tee',
-      href: '#',
-      imageSrc: 'https://tailwindui.com/img/ecommerce-images/product-page-01-related-product-01.jpg',
-      imageAlt: "Front of men's Basic Tee in black.",
-      price: 'kes 432',
-      color: 'Black',
-    },
-    {
-      id: 1,
-      name: 'Basic Tee',
-      href: '#',
-      imageSrc: 'https://tailwindui.com/img/ecommerce-images/product-page-01-related-product-01.jpg',
-      imageAlt: "Front of men's Basic Tee in black.",
-      price: 'kes 432',
-      color: 'Black',
-    },
-    {
-      id: 1,
-      name: 'Basic Tee',
-      href: '#',
-      imageSrc: 'https://tailwindui.com/img/ecommerce-images/product-page-01-related-product-01.jpg',
-      imageAlt: "Front of men's Basic Tee in black.",
-      price: 'kes 432',
-      color: 'Black',
-    },
-    {
-      id: 1,
-      name: 'Basic Tee',
-      href: '#',
-      imageSrc: 'https://tailwindui.com/img/ecommerce-images/product-page-01-related-product-01.jpg',
-      imageAlt: "Front of men's Basic Tee in black.",
-      price: 'kes 432',
-      color: 'Black',
-    },
-    {
-      id: 1,
-      name: 'Basic Tee',
-      href: '#',
-      imageSrc: 'https://tailwindui.com/img/ecommerce-images/product-page-01-related-product-01.jpg',
-      imageAlt: "Front of men's Basic Tee in black.",
-      price: 'kes 432',
-      color: 'Black',
-    },
-    {
-        id: 1,
-        name: 'Basic Tee',
-        href: '#',
-        imageSrc: 'https://tailwindui.com/img/ecommerce-images/product-page-01-related-product-01.jpg',
-        imageAlt: "Front of men's Basic Tee in black.",
-        price: 'kes 432',
-        color: 'Black',
-      },
-      {
-        id: 1,
-        name: 'Basic Tee',
-        href: '#',
-        imageSrc: 'https://tailwindui.com/img/ecommerce-images/product-page-01-related-product-01.jpg',
-        imageAlt: "Front of men's Basic Tee in black.",
-        price: 'kes 432',
-        color: 'Black',
-      },
-    // More products...
-  
-    // More products...
-  ]
-
-
+import {getProduct} from '../../../../../actions/allProductAction'
 
 export default function Main() {
+  const dispatch = useDispatch()
+
+  const {loadings, products,errrors,productsCount} = useSelector(state => state.products)
+
+  useEffect(() => {
+    dispatch(getProduct)
+  },[dispatch])
     return(<Fragment>
           <div className="bg-white">
             <div className="max-w-2xl mx-auto py-16 px-4 sm:py-24 sm:px-6 lg:max-w-7xl lg:px-8">
@@ -106,7 +35,7 @@ export default function Main() {
                             {product.name}
                           </a>
                         </h3>
-                        <p className="mt-1 text-sm text-gray-500">{product.color}</p>
+                        <p className="mt-1 text-sm text-gray-500">{product.numOfReviews}</p>
                       </div>
                       <p className="text-sm font-medium text-gray-900">{product.price}</p>
                     </div>
