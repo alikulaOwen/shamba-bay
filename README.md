@@ -1,3 +1,3 @@
 # shamba-bay
 
-## An Farm Magement tool and Ecommerce
+## An Farm management tool and ecommerce
