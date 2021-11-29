@@ -1,0 +1,21 @@
+{
+    "name": "Maize",
+    "price": 10,
+    "description": "Lopsum Ipsum Lopsum Ipsum Lopsum Ipsum Lopsum Ipsum Lopsum Ipsum Lopsum Ipsum Lopsum IpsumLopsum IpsumLopsum IpsumLopsum IpsumLopsum Ipsum",
+    "rating": 5 ,
+    "images": [
+        {
+            "pulic_id": "photo-1551754655-cd27e38d2076?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80",
+            "url": "https://images.unsplash.com/photo-1551754655-cd27e38d2076?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80"
+
+        }
+    ],
+    "category": "Vegetables",
+    "seller": "Alikula Owen",
+    "stock": "150", 
+    "numOfReviews": 35,
+    "reviews": [],
+"timeCreated": "11/12/2021", 
+"status": "Storable",
+"location": "Nairobi, Kenya"
+}

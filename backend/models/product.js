@@ -5,7 +5,7 @@ const productSchema = new mongoose.Schema({
     name: {
         type: String,
         required:[ true, 'Please enter product name'],
-        maxlength: [5, 'product name cant exceed 5 characters'],
+        maxlength: [20, 'product name cant exceed 5 characters'],
         trim: true
     },
     price: {
@@ -52,6 +52,7 @@ const productSchema = new mongoose.Schema({
             message: 'please select a category.'
         }
     },
+
     seller: {
         type: String,
         required: [true, 'Please enter product seller']
@@ -67,10 +68,11 @@ const productSchema = new mongoose.Schema({
     },
     reviews: [
         {
-        user: {
-             type: String,
-             required: true,
-        },
+        user:{
+                type: mongoose.Schema.ObjectId,
+                ref: 'User',
+                required: false
+            }, 
         ratings: {
             type: String,
             required: true
@@ -81,6 +83,11 @@ const productSchema = new mongoose.Schema({
         }
     }
 ],
+user:{
+    type: mongoose.Schema.ObjectId,
+    ref: 'User',
+    required: true
+}, 
 timeCreated: {
     type: Date,
     default: Date.Now
@@ -95,11 +102,12 @@ status: {
             'storable',
         ]
     },
-    location: {
-        type: Location,
-        required: false
-        
-    }
+   
+},
+location: {
+    type: String,
+    required: false
+    
 }
 });
 
